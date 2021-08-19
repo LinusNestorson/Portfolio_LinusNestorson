@@ -1,0 +1,23 @@
+.about_main_grid {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+    "event1 event1 event1"
+    "event2 event2 event2"
+    "event3 event3 event3";
+  padding: 1.5em 2em 1.5em 2em;
+  gap: 1.5em;
+}
+
+.first_event {
+  grid-area: event1;
+}
+
+.second_event {
+  grid-area: event2;
+}
+
+.third_event {
+  grid-area: event3;
+}
