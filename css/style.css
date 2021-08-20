@@ -22,8 +22,7 @@ html {
 }
 
 body {
-  display: grid;
-  grid-area: "header" "main" "footer";
+  overflow: scroll;
   height: 100%;
   max-width: 1000px;
   margin: auto;
@@ -35,6 +34,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 @media screen and (min-width: 2570px) {

@@ -5,9 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
   </head>
   <body>
-    <img class="project1" src="/img/mockbild1.jpg" alt="berg" />
-    <img class="project2" src="/img/mockbild2.jpg" alt="elefant" />
+    <header>
+      <nav class="header_navbar">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Slideshow container -->
+      <div class="slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="/img/mockbild1.jpg" style="width: 100%" />
+          <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="img/mockbild2.jpg" style="width: 100%" />
+          <div class="text">Caption Two</div>
+        </div>
+
+        <!-- 
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="/img/mockbild1.jpg" style="width: 100%" />
+          <div class="text">Caption Three</div>
+        </div> -->
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br />
+
+      <!-- The dots/circles -->
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <!-- <span class="dot" onclick="currentSlide(3)"></span> -->
+      </div>
+    </main>
+    <script src="/javascript/logic.js"></script>
   </body>
 </html>
