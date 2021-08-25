@@ -17,12 +17,11 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="index_body">
     <header>
       <nav class="header_navbar">
         <ul>
           <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About</a></li>
           <li><a href="/portfolio.html">Portfolio</a></li>
         </ul>
       </nav>
@@ -42,7 +41,6 @@
         </button>
         <div id="myModal" class="modal fade" class="modal_size" role="dialog">
           <div class="modal-dialog modal-dialog-centered" role="document">
-            <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-body">
                 <p>Email: linus@nestorson.com</p>
@@ -66,25 +64,41 @@
           <h1 class="person_lastname">Nestorson</h1>
         </div>
       </section>
-      <section class="index_text"></section>
     </header>
     <main>
-      <section class="main_grid">
-        <div class="text_section">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
-            numquam quibusdam repudiandae tempora molestias facere doloribus
-            architecto, reiciendis ipsum corporis? Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Eum labore atque commodi suscipit
-            nobis saepe blanditiis vitae voluptatibus, quaerat reprehenderit?
-          </p>
+      <div class="text_section">
+        <h3 class="text_section_header">About</h3>
+        <p>
+          Former engineer with background withing construction design. Now
+          looking for job opportunities as a fullstack developer on the west
+          coast of Sweden or abroad.
+        </p>
+
+        <h3 class="text_section_header">Skillset</h3>
+        <div class="skill_grid">
+          <img class="logo1" src="/img/net-seeklogo.com.svg" alt=".net_logo" />
+          <img
+            class="logo2"
+            src="/img/c-sharp-c-seeklogo.com.svg"
+            alt="c#_logo"
+          />
+          <img
+            class="logo3"
+            src="/img/react-seeklogo.com.svg"
+            alt="react_logo"
+          />
         </div>
-      </section>
+      </div>
     </main>
-    <footer class="footer">
-      <i class="fab fa-github footer_logos"></i>
-      <i class="fab fa-linkedin footer_logos"></i>
+    <footer>
+      <a href="https://github.com/LinusNestorson"
+        ><i class="fab fa-github footer_logos"></i
+      ></a>
+      <a href="https://www.linkedin.com/in/linusnestorson/"
+        ><i class="fab fa-linkedin footer_logos"></i>
+      </a>
     </footer>
+    <script src="/javascript/logic.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
