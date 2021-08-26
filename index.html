@@ -19,7 +19,7 @@
   </head>
   <body class="index_body">
     <header>
-      <nav class="header_navbar">
+      <nav class="navbar">
         <ul>
           <li><a href="/index.html">Home</a></li>
           <li><a href="/portfolio.html">Portfolio</a></li>
@@ -33,7 +33,7 @@
         />
         <button
           type="button"
-          class="contact_button"
+          class="contact_btn"
           data-toggle="modal"
           data-target="#myModal"
         >
@@ -47,6 +47,11 @@
                 <p>Phone: +46724035832</p>
               </div>
               <div class="modal-footer">
+                <button type="button" class="btn btn-secondary">
+                  <a href="mailto:linus@nestorson.com""
+                    >Mail me!</a
+                  >
+                </button>
                 <button
                   type="button"
                   class="btn btn-secondary"
@@ -65,27 +70,34 @@
         </div>
       </section>
     </header>
-    <main>
+    <main class="index_main">
       <div class="text_section">
-        <h3 class="text_section_header">About</h3>
+        <h3><i class="fas fa-user-ninja"></i> About</h3>
         <p>
-          Former engineer with background withing construction design. Now
-          looking for job opportunities as a fullstack developer on the west
-          coast of Sweden or abroad.
+          Former engineer now looking for job opportunities as a fullstack
+          developer on the west coast of Sweden or abroad.
         </p>
-
-        <h3 class="text_section_header">Skillset</h3>
+      </div>
+      <div class="skills">
+        <h3><i class="fas fa-star"></i> Skillset</h3>
         <div class="skill_grid">
           <img class="logo1" src="/img/net-seeklogo.com.svg" alt=".net_logo" />
           <img
             class="logo2"
-            src="/img/c-sharp-c-seeklogo.com.svg"
-            alt="c#_logo"
+            src="/img/react-seeklogo.com.svg"
+            alt="javascript logo"
           />
           <img
             class="logo3"
-            src="/img/react-seeklogo.com.svg"
-            alt="react_logo"
+            src="/img/c-sharp-c-seeklogo.com.svg"
+            alt="c#_logo"
+          />
+          <img class="logo4" src="img/icons8-html-5.svg" alt="html logo" />
+          <img class="logo5" src=" img/icons8-css3.svg" alt="react_logo" />
+          <img
+            class="logo6"
+            src="img/javascript-seeklogo.com.svg"
+            alt="css logo"
           />
         </div>
       </div>

@@ -2,29 +2,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-/* Global styles*/
 
+/* ------------ */
+/* Global styles*/
+/* ------------ */
+
+/* Include border and padding in width & hight of element */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Variables for colors used in the project */
+
 :root {
   --clr-orange-primary: rgb(255, 157, 0);
   --clr-orange-secondary: rgba(216, 212, 0, 0.568);
   --clr-orange-hover: #ff7a00;
-  --clr-light-grey: #afafaf;
-  --clr-dark-grey: rgb(0, 0, 0);
-  --clr-offwhite: #e9e9e9;
+  --clr-light-opaque-grey: #b9b9b9a9;
+  --clr-light-grey: #b9b9b9;
 }
+
+/* Sets hight on html. Necessary for keeping logos at buttom of page*/
 
 html {
   height: 100%;
 }
 
+/* Adjust size of images */
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* --------- */
+/* HOME PAGE*/
+/* -------- */
+
+/* Style for index body */
+
 .index_body {
   display: grid;
+  grid-template-rows: 0.6fr 1fr 1fr;
   overflow: scroll;
   height: 100%;
   max-width: 1000px;
@@ -42,60 +63,68 @@ html {
   background-attachment: fixed;
 }
 
-@media screen and (min-width: 2570px) {
-  body {
-    max-width: 1500px;
-  }
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
+/* ------------ */
 /* Header styles*/
+/* ------------ */
 
 header {
   width: 100%;
+  height: fit-content;
   align-items: center;
 }
 
-.header_navbar {
-  padding: 2vh 3vw 0 3vw;
+/* Sets style for navbar */
+
+.navbar {
+  padding: 2vh 0 0 3em;
 }
 
-.header_navbar ul {
+/* Sets style for the list cointaind within the navbar */
+
+.navbar ul {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   padding: 0;
 }
 
-.header_navbar li {
+/* Sets style for each item within the list of navbar */
+
+.navbar li {
   list-style: none;
   font-family: "Permanent Marker", cursive;
   font-weight: 500;
   font-size: 6vw;
 }
 
+/* Change size of text in navbar when using device with larger screen */
+
 @media screen and (min-width: 750px) {
-  .header_navbar li {
+  .navbar li {
     font-size: 3rem;
   }
 }
 
-.header_navbar li a {
+/* Sets styling for link inside of navbar list */
+
+.navbar li a {
   text-decoration: none;
   color: black;
 }
 
-.header_navbar li a:hover {
+/* Sets hover effect for links within navbar list */
+
+.navbar li a:hover {
   color: var(--clr-orange-hover);
 }
 
-.header_navbar li a:focus {
+/* Sets focus effect for links within navbar list */
+
+.navbar li a:focus {
   color: var(--clr-orange-hover);
 }
+
+/* Styling for header container */
 
 .header_container {
   display: flex;
@@ -105,43 +134,83 @@ header {
   margin-bottom: 0;
 }
 
+/* Styling for name container in mobile-sized devices */
+
 .name_container {
   display: flex;
 }
 
-.main_face_img {
+/* Styling for */
+
+header img {
   border-radius: 50%;
   width: 60%;
-  border: solid var(--clr-dark-grey) 3px;
-  box-shadow: 0 0 10px var(--clr-dark-grey);
+  border: solid black 3px;
+  box-shadow: 0 0 10px black;
 }
+
+/* Used for set serperate first name to none when on mobile/smaller device */
 
 .person_firstname {
   display: none;
 }
 
+/* Used for setting serperate last name to none when on mobile/smaller device */
+
 .person_lastname {
   display: none;
 }
+
+/* When on mobile/smaller device show full name in one row. Hide on smaller devices*/
 
 .fullname {
   font-family: "Permanent Marker", cursive;
   font-size: 8vw;
 }
 
-.contact_button {
+/* Styling of button used for pop-up containing contact info*/
+
+.contact_btn {
+  text-align: center;
   margin-top: 1em;
   margin-bottom: 0.5em;
-  background-color: var(--clr-light-grey);
-  width: 25vw;
+  background-color: var(--clr-light-opaque-grey);
+  text-decoration: none;
+  width: 30vw;
   font-size: 5vw;
   border-radius: 10px;
   font-family: "Permanent Marker", cursive;
-  text-decoration: none;
   cursor: pointer;
 }
 
-@media screen and (min-width: 750px) {
+/* Sets styling of anchor element inside modal footer */
+
+.modal-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Sets hover effect for contact button */
+
+.contact_btn:hover {
+  background: var(--clr-orange-hover);
+}
+
+/* Sets focus effect for contact button */
+
+.contact_btn:focus {
+  background: var(--clr-orange-hover);
+}
+
+/* Sets effect for button when clicked */
+
+.contact_btn:active {
+  transform: scale(0.9);
+}
+
+/* Changing following classes inside header at 750 px for cleaner look */
+
+@media screen and (min-width: 800px) {
   .header_container {
     display: grid;
     grid-template-areas:
@@ -175,9 +244,6 @@ header {
   }
   .main_face_img {
     width: 22em;
-    border-radius: 50%;
-    border: solid var(--clr-dark-grey) 3px;
-    box-shadow: 0 0 10px var(--clr-dark-grey);
   }
 
   .person_firstname {
@@ -198,99 +264,164 @@ header {
   .fullname {
     display: none;
   }
-}
 
-@media screen and (min-width: 750px) {
-  .contact_button {
+  .contact_btn {
     width: 4.5em;
     font-size: 1.6em;
   }
 }
 
-.contact_button:hover {
-  background: var(--clr-orange-hover);
-}
-
-.contact_button:focus {
-  background: var(--clr-orange-hover);
-}
-
-.contact_button:active {
-  transform: scale(0.9);
-}
+/* Changning properties inside of bootstrap class */
 
 .modal-content {
-  margin: 0 10% 0 10%;
+  margin: 0 2% 0 2%;
 }
+
+/* Changning properties inside of bootstrap class */
 
 .modal-body {
   font-family: "Source Code Pro", monospace;
   font-size: 1.2rem;
 }
 
-/* Main styles*/
+/* Changning properties inside of bootstrap class */
 
-.text_section_header {
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  font-size: 3.2vh;
+.modal-footer {
+  justify-content: space-between;
 }
+
+/* ----------- */
+/* Main styles */
+/* ----------- */
+
+/* Style of main on home page*/
+
+.index_main {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 10vw 1em 18vw;
+}
+
+/* Style of text section of home page*/
 
 .text_section {
   font-family: "Source Code Pro", monospace;
-  padding: 0.5em 10vw 1em 15vw;
+  font-size: 3vw;
+  padding-top: 2vh;
 }
 
-@media screen and (min-width: 750px) {
-  .text_section {
-    grid-area: text;
-    width: 100%;
-    font-weight: 550;
-    font-size: 1.4rem;
-    padding: 0 3em 0 3em;
-  }
+/* Style of header of text section*/
+
+.text_section h3 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 6vw;
 }
+
+.skills {
+  padding-top: 2vh;
+}
+
+/* Style of header of skill section*/
+
+.skills h3 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 6vw;
+}
+
+/* Setting up grid for skill section */
 
 .skill_grid {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-areas: "logo1 logo2 logo3";
-  padding: 0 0 1em 0;
-  gap: 1em;
+  grid-template-areas: "logo1 logo2 logo3" "logo4 logo5 logo6";
+  padding: 0 0 0 0;
 }
 
-.first_event {
-  grid-area: event1;
+/* Changing following classes inside main at 750 px for cleaner look */
+
+@media screen and (min-width: 800px) {
+  .index_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em 6em 0 2em;
+  }
+
+  .text_section {
+    width: 50%;
+    font-weight: 550;
+    font-size: 1.6rem;
+    padding: 0 0 0 3em;
+  }
+
+  .text_section h3 {
+    font-size: 3rem;
+    padding-bottom: 0.5em;
+  }
+
+  .skills h3 {
+    font-size: 3rem;
+    padding-bottom: 0.5em;
+  }
+
+  .skills {
+    padding-top: 0;
+  }
+
+  .skill_grid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas: "logo1 logo2" "logo3 logo4" "logo5 logo6";
+    padding: 0 0 1em 0;
+    gap: 3em;
+  }
 }
 
-.second_event {
-  grid-area: event1;
-}
-
-.third_event {
-  grid-area: event1;
-}
+/* Set grid placement and size of skill logos */
 
 .logo1 {
   grid-area: logo1;
-  width: 80%;
-  height: 80%;
+  width: 65%;
+  height: 65%;
 }
 
 .logo2 {
   grid-area: logo2;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
 }
 
 .logo3 {
   grid-area: logo3;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
 }
 
-@media screen and (min-width: 750px) {
+.logo4 {
+  grid-area: logo4;
+  width: 70%;
+  height: 70%;
+}
+
+.logo5 {
+  grid-area: logo5;
+  width: 70%;
+  height: 70%;
+}
+
+.logo6 {
+  grid-area: logo6;
+  width: 60%;
+  height: 60%;
+}
+
+/* Adapt logos for larger screens */
+
+@media screen and (min-width: 800px) {
   .logo1 {
     width: 6em;
     height: auto;
@@ -300,12 +431,32 @@ header {
     height: auto;
   }
   .logo3 {
+    width: 5em;
+    height: auto;
+  }
+  .logo4 {
+    grid-area: logo4;
     width: 6em;
+    height: auto;
+  }
+
+  .logo5 {
+    grid-area: logo5;
+    width: 6em;
+    height: auto;
+  }
+
+  .logo6 {
+    grid-area: logo6;
+    width: 4.5em;
     height: auto;
   }
 }
 
+/* ------------ */
 /* Footer styles*/
+/* ------------ */
+
 footer {
   display: flex;
   align-items: flex-end;
@@ -313,17 +464,193 @@ footer {
   gap: 2em;
 }
 
+/* Set style of company logos */
+
 .footer_logos {
   color: black;
   font-size: 10vw;
 }
 
+/* Set style of company logos */
+
 .footer_logos:hover {
   transform: scale(1.4);
 }
 
-@media screen and (min-width: 750px) {
+/* Adapt company logos for larger screens */
+
+@media screen and (min-width: 800px) {
   .footer_logos {
     font-size: 4rem;
   }
+}
+
+/* ------------- */
+/* PORTFOLIO PAGE*/
+/* ------------- */
+
+/* Style for index body */
+
+.portfolio_body {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: min-content;
+  overflow: scroll;
+  height: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0;
+  font-weight: 800;
+  padding-bottom: 2.5em;
+  background-image: linear-gradient(rgba(216, 212, 0, 0.568), rgb(255, 157, 0));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ------------- */
+/* Header styles */
+/* ------------- */
+
+/* Place portfolio header inside of grid area */
+
+.portfolio_header {
+  grid-area: header;
+}
+
+/* ------------ */
+/*  Main styles */
+/* ------------ */
+
+/* Style of portfolio main section */
+
+.portfolio_main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3em;
+  margin: auto;
+  gap: 2em;
+  width: 90%;
+  margin-top: 0;
+}
+
+/* Styling of arrow and animation */
+
+.arrow {
+  font-size: 7vw;
+  animation: pulse-arrow 1s infinite;
+}
+
+@keyframes pulse-arrow {
+  0% {
+    transform: scale(0.6);
+  }
+}
+
+/* Adjust arrow for larger devices */
+
+@media screen and (min-width: 1000px) {
+  .arrow {
+    font-size: 5em;
+  }
+}
+
+/* Style of portfolio text area inside main */
+
+.text_area {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  padding-bottom: 2em;
+}
+
+/* Style of text below project slider */
+
+.project_text {
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+/* Adjust text for larger screens */
+
+@media screen and (min-width: 1000px) {
+  .project_text {
+    font-size: 4rem;
+  }
+}
+
+/* Styling of slider container */
+
+.slider_container {
+  position: relative;
+  margin: auto;
+  border: 2px solid black;
+  box-shadow: 0 0 15px black;
+}
+
+/* Prevent slides from being shown when not displayed */
+
+.slides {
+  display: none;
+}
+
+/* Sets hover effekt for slides */
+
+.slides:hover {
+  opacity: 70%;
+}
+
+/* Set style for buttons in slider */
+
+.prev,
+.next {
+  position: absolute;
+  top: 40%;
+  border-radius: 15%;
+  cursor: pointer;
+  width: auto;
+  font-size: 5vw;
+  padding: 0 0.5em 0 0.5em;
+  transition: 0.6s ease;
+  background: var(--clr-light-opaque-grey);
+}
+
+/* Adapt buttons for larger screens */
+
+@media screen and (min-width: 1000px) {
+  .prev,
+  .next {
+    font-size: 4rem;
+  }
+}
+
+/* Sets effect for buttons */
+
+.prev:active,
+.next:active {
+  transform: scale(0.6);
+}
+
+/* Placement of next button */
+
+.next {
+  right: 0;
+}
+
+/* -------------- */
+/*  Footer styles */
+/* -------------- */
+
+/* Sets style for portfolio footer */
+
+.portfolio_footer {
+  grid-area: footer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
