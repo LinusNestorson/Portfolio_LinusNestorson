@@ -76,7 +76,7 @@ header {
 /* Sets style for navbar */
 
 .navbar {
-  padding: 2vh 0 0 3em;
+  padding: 2vh 0 0 3em !important;
 }
 
 /* Sets style for the list cointaind within the navbar */
